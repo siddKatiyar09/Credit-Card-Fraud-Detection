@@ -1,0 +1,7 @@
+{
+  "input_path": "D:\\Project resume\\2.Credit Card Fraud Detection\\creditcard.csv.zip",
+  "random_state": 42,
+  "false_positive_cost": 25.0,
+  "false_negative_cost": 500.0,
+  "deep_learning_enabled": true
+}

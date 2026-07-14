@@ -1,0 +1,163 @@
+<html>
+    <head>
+      <meta charset="utf-8" />
+      <title>Credit Card Fraud Detection Report</title>
+      <style>
+        body { font-family: Arial, sans-serif; margin: 32px; color: #17202a; background: #f7f9fc; }
+        h1, h2 { color: #173f5f; }
+        h3 { color: #24577a; margin-bottom: 10px; }
+        .card { background: white; padding: 20px; margin-bottom: 18px; border-radius: 10px; box-shadow: 0 8px 24px rgba(0,0,0,0.06); }
+        .kpi { display: inline-block; min-width: 180px; margin-right: 16px; }
+        .grid { display: grid; grid-template-columns: repeat(2, minmax(280px, 1fr)); gap: 18px; }
+        .figure-card { background: white; padding: 16px; border-radius: 10px; box-shadow: 0 8px 24px rgba(0,0,0,0.06); }
+        .figure-card img { width: 100%; border-radius: 8px; border: 1px solid #d8dee9; }
+        table { border-collapse: collapse; width: 100%; background: white; }
+        th, td { border: 1px solid #d8dee9; padding: 10px; text-align: left; }
+        th { background: #e9eef6; }
+        ul { margin: 0; padding-left: 18px; }
+      </style>
+    </head>
+    <body>
+      <h1>Credit Card Fraud Detection Using Deep Learning</h1>
+      <div class="card">
+        <h2>Data Quality</h2>
+        <div class="kpi"><strong>Raw Rows</strong><br>284,807</div>
+        <div class="kpi"><strong>Clean Rows</strong><br>283,726</div>
+        <div class="kpi"><strong>Fraud Rate</strong><br>0.1667%</div>
+        <div class="kpi"><strong>Duplicates Removed</strong><br>1,081</div>
+      </div>
+      <div class="card">
+        <h2>Recommended Model</h2>
+        <p><strong>Logistic Regression + SMOTE</strong> delivers the lowest estimated operations cost.</p>
+        <p>Precision: 0.8750 | Recall: 0.7368 | Estimated Cost: $12,750.00</p>
+      </div>
+      <div class="card">
+        <h2>Business Interpretation</h2>
+        <ul>
+          <li>Fraud is extremely rare, so accuracy alone can look strong even when the model misses costly fraud events.</li>
+          <li>Threshold tuning is essential because false negatives are assumed to cost far more than false positives.</li>
+          <li>The recommended model balances recall and review workload better than the alternatives in this run.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h2>Model Comparison</h2>
+        <table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>model</th>
+      <th>threshold</th>
+      <th>accuracy</th>
+      <th>precision</th>
+      <th>recall</th>
+      <th>f1_score</th>
+      <th>roc_auc</th>
+      <th>pr_auc</th>
+      <th>true_negative</th>
+      <th>false_positive</th>
+      <th>false_negative</th>
+      <th>true_positive</th>
+      <th>estimated_cost</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Logistic Regression + SMOTE</td>
+      <td>1.000000</td>
+      <td>0.999383</td>
+      <td>0.875000</td>
+      <td>0.736842</td>
+      <td>0.800000</td>
+      <td>0.965445</td>
+      <td>0.704180</td>
+      <td>56641</td>
+      <td>10</td>
+      <td>25</td>
+      <td>70</td>
+      <td>12750.0</td>
+    </tr>
+    <tr>
+      <td>Random Forest</td>
+      <td>0.628480</td>
+      <td>0.999436</td>
+      <td>0.943662</td>
+      <td>0.705263</td>
+      <td>0.807229</td>
+      <td>0.946438</td>
+      <td>0.801968</td>
+      <td>56647</td>
+      <td>4</td>
+      <td>28</td>
+      <td>67</td>
+      <td>14100.0</td>
+    </tr>
+    <tr>
+      <td>Deep Neural Network</td>
+      <td>0.999995</td>
+      <td>0.999207</td>
+      <td>0.804878</td>
+      <td>0.694737</td>
+      <td>0.745763</td>
+      <td>0.964069</td>
+      <td>0.691523</td>
+      <td>56635</td>
+      <td>16</td>
+      <td>29</td>
+      <td>66</td>
+      <td>14900.0</td>
+    </tr>
+  </tbody>
+</table>
+      </div>
+      <div class="card">
+        <h2>Top Fraud-Linked Features</h2>
+        <table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>feature</th>
+      <th>fraud_correlation</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>V17</td>
+      <td>-0.3135</td>
+    </tr>
+    <tr>
+      <td>V14</td>
+      <td>-0.2934</td>
+    </tr>
+    <tr>
+      <td>V12</td>
+      <td>-0.2507</td>
+    </tr>
+    <tr>
+      <td>V10</td>
+      <td>-0.2070</td>
+    </tr>
+    <tr>
+      <td>V16</td>
+      <td>-0.1872</td>
+    </tr>
+    <tr>
+      <td>V3</td>
+      <td>-0.1823</td>
+    </tr>
+    <tr>
+      <td>V7</td>
+      <td>-0.1723</td>
+    </tr>
+    <tr>
+      <td>V11</td>
+      <td>0.1491</td>
+    </tr>
+  </tbody>
+</table>
+      </div>
+      <div class="card">
+        <h2>EDA Visuals</h2>
+        <div class="grid">
+          <div class="figure-card"><h3>Fraud Distribution</h3><img src="figures/fraud_distribution.png" alt="Fraud Distribution" /></div><div class="figure-card"><h3>Amount by Class</h3><img src="figures/amount_by_class.png" alt="Amount by Class" /></div><div class="figure-card"><h3>Hourly Pattern</h3><img src="figures/hourly_pattern.png" alt="Hourly Pattern" /></div><div class="figure-card"><h3>Correlation Heatmap</h3><img src="figures/correlation_heatmap.png" alt="Correlation Heatmap" /></div>
+        </div>
+      </div>
+    </body>
+    </html>

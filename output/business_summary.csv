@@ -1,0 +1,2 @@
+recommended_model,reason,estimated_cost,precision,recall,false_positive,false_negative
+Logistic Regression + SMOTE,Lowest estimated fraud operations cost with strong PR-AUC performance,12750.0,0.875,0.7368421052631579,10,25
