@@ -16,7 +16,7 @@ not used. All analysis, charts, modeling, and conclusions are inside one execute
 ```text
 Credit-Card-Fraud-Detection-Simple/
 |-- data/
-|   |-- creditcard.csv.zip
+|   |-- Download from kaggle
 |-- credit_card_fraud_detection_simple.ipynb
 |-- README.md
 |-- requirements.txt
