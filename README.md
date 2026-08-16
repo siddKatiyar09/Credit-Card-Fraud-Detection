@@ -7,8 +7,7 @@ The project uses two models:
 - Logistic Regression as a simple baseline
 - A small neural network using scikit-learn's `MLPClassifier`
 
-TensorFlow, SMOTE, Streamlit, saved model files, source folders, and output folders are intentionally
-not used. All analysis, charts, modeling, and conclusions are inside one executed Jupyter notebook.
+All analysis, charts, modeling, and conclusions are inside one executed Jupyter notebook.
 
 ## Repository Structure
 
