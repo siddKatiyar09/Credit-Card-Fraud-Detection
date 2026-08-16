@@ -1,2 +1,0 @@
-raw_rows,clean_rows,duplicates_removed,missing_values,fraud_rows,normal_rows,fraud_rate_pct,avg_amount,median_amount,max_amount
-284807,283726,1081,0,473,283253,0.1667101358352777,88.47268731099723,22.0,25691.16
