@@ -1,7 +1,6 @@
 # Credit Card Fraud Detection - Simple College Project
 
-This project uses Python to identify fraudulent credit card transactions. It is designed for a
-college student who wants a clear project that can run on a normal laptop.
+This project uses Python to identify fraudulent credit card transactions.
 
 The project uses two models:
 
